@@ -17,8 +17,7 @@ int main()
     XFree (image);
     XQueryColor (d, DefaultColormap(d, DefaultScreen (d)), &c);
 
-    printf("%d\n", c.red/256);
-    printf("%d\n", c.green/256);
-    printf("%d\n", c.blue/256);
+    printf("#%x%x%x\n", c.red/256, c.green/256, c.blue/256);
+
     return 0;
 }
