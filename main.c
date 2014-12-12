@@ -37,18 +37,23 @@ int getPixelValue(int x, int y, int* red, int* green, int* blue)
 	return 0;
 }
 
-int main(int argc, char **argv)
+int loop()
 {
-	int cursorX;
-	int cursorY;
-	getCursorLocation(&cursorX, &cursorY);
-	
 	int red;
 	int green;
 	int blue;
-	getPixelValue(cursorX, cursorY, &red, &green, &blue);
-	
-	printf("the cursor location is %d, %d\n", cursorX, cursorY);
-	printf("Pixel there %d %d %d\n", red, green, blue);
+	getPixelValue(100, 100, &red, &green, &blue);
+	printf("Pixel there #%x%x%x\n", red, green, blue);
+	return 0;
+}
+
+int main(int argc, char **argv)
+{
+	int loops = 100;
+	int i;
+	for(i=0; i<loops; i++){
+		loop();
+		Sleep(100);
+	}
 	return 0;
 }
